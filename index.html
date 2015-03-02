@@ -1,0 +1,63 @@
+<!doctype html>
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>Mobile Redirect</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		  <!--
+			/*
+			  INFOS:
+			  
+			    User Agent
+			    
+				navigator.userAgent.match(/Android/i)
+				navigator.userAgent.match(/webOS/i)
+			  	navigator.userAgent.match(/iPhone/i)
+			 	navigator.userAgent.match(/iPad/i)
+			  	navigator.userAgent.match(/iPod/i)
+			  	navigator.userAgent.match(/BlackBerry/i)
+			 	navigator.userAgent.match(/Windows Phone/i)
+				
+				
+				Break Point 
+				Mobile (Smartphone) from 320 pixels to 767 pixels (with ‘gutters’ left and right -> 15 pixels/gutter).
+				Tablet (portrait) from 768 pixels to 1007 pixels (with ‘gutters’ left and right -> 34 pixels/gutter)..
+				Desktop and Tablet (landscape) from 1008 pixels to 1199 pixels (with ‘gutters’ left and right -> 24 pixels/gutter).
+				Desktop Large from 1200 pixels (with ‘gutters’ left and right -> 24 pixels/gutter).
+				
+			 */
+			  
+			if (navigator.userAgent.match(/iPhone/i)) {
+			  	location.replace("http://url-to-redirect.com");
+				//alert('iOS / iPhone');
+			} else if(navigator.userAgent.match(/iPod/i)) {
+				location.replace("http://url-to-redirect.com");
+				//alert('iOS / iPod');
+			} else if(navigator.userAgent.match(/iPad/i)) {
+				location.replace("http://url-to-redirect.com");
+				//alert('iOS / iPad');
+			} else if(navigator.userAgent.match(/Android/i)) {
+				location.replace("http://url-to-redirect.com");
+				//alert('Android');
+				 if(window.innerWidth <= 767) {
+					 location.replace("http://url-to-redirect.com");
+					//alert('Smartphone'); 
+				 } else  if(window.innerWidth >= 768 && window.innerWidth <= 1007) {
+					 location.replace("http://url-to-redirect.com");
+					//alert('Smartphone'); 
+				 } else  {
+					 location.replace("http://url-to-redirect.com");
+					 //alert('Big Screen'); 
+				 }
+			} else {
+				location.replace("http://url-to-redirect.com");
+				//alert('Other OS');
+			}
+		
+			//-->
+		</script>
+		Redirect...
+	</body>
+</html>
