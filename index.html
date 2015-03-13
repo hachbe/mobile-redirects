@@ -21,14 +21,20 @@
 			 	navigator.userAgent.match(/Windows Phone/i)
 				
 				
-				Break Point 
+				Break Point Belfius Easify
 				Mobile (Smartphone) from 320 pixels to 767 pixels (with ‘gutters’ left and right -> 15 pixels/gutter).
 				Tablet (portrait) from 768 pixels to 1007 pixels (with ‘gutters’ left and right -> 34 pixels/gutter)..
 				Desktop and Tablet (landscape) from 1008 pixels to 1199 pixels (with ‘gutters’ left and right -> 24 pixels/gutter).
 				Desktop Large from 1200 pixels (with ‘gutters’ left and right -> 24 pixels/gutter).
 				
+				
+				Ref pour Android: http://googlewebmastercentral.blogspot.be/2011/03/mo-better-to-also-detect-mobile-user.html
+				Test user Agent: http://whichbrowser.net
+				
+				
 			 */
-			  
+			 
+			 alert(navigator.userAgent);
 			if (navigator.userAgent.match(/iPhone/i)) {
 			  	location.replace("http://url-to-redirect.com");
 				//alert('iOS / iPhone');
@@ -41,16 +47,15 @@
 			} else if(navigator.userAgent.match(/Android/i)) {
 				location.replace("http://url-to-redirect.com");
 				//alert('Android');
-				 if(window.innerWidth <= 767) {
-					 location.replace("http://url-to-redirect.com");
+			
+				if(navigator.userAgent.match(/Mobile/i)) {
+					location.replace("http://url-to-redirect.com");
 					//alert('Smartphone'); 
-				 } else  if(window.innerWidth >= 768 && window.innerWidth <= 1007) {
-					 location.replace("http://url-to-redirect.com");
-					//alert('Smartphone'); 
-				 } else  {
-					 location.replace("http://url-to-redirect.com");
-					 //alert('Big Screen'); 
-				 }
+				} else {
+					location.replace("http://url-to-redirect.com");
+					//alert('Tablet'); 
+				}
+				
 			} else {
 				location.replace("http://url-to-redirect.com");
 				//alert('Other OS');
